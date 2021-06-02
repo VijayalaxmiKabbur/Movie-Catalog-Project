@@ -23,29 +23,35 @@ public class Movie_Info_Controller {
 	@Autowired                         
 	Movie_Info_Service movieinfoservice;
 	
-	
+	/**
+	 * 
+	 * @return all movies stored in the Movie_info_service1 repository
+	 */
 	@GetMapping("/movies")
 	public List<Movie_Info> getAllMoviesFromRepository(){
 		return movieinfoservice.getAllMovieInfo();
-		
+		//http://localhost:8082/movie_info/movies
 	}
 	
 	@GetMapping("/{id}")
 	public Optional<Movie_Info> getSpecifiedMovie(@PathVariable int id){
 
 		return movieinfoservice.getOneMovie(id);
+		//http://localhost:8082/movie_info/101
 	}
 	
 	@PostMapping("/addmovie")
 	public Movie_Info createMovie(@RequestBody Movie_Info movie) {
 		
 		return movieinfoservice.postOneMovie(movie);
+		//http://localhost:8082/movie_info/addmovie	
 	}
 	
 	
 	@DeleteMapping("/deletemovie/{id}")
 	public Optional<Movie_Info> deleteMovie(@PathVariable("id") int id){
 		return movieinfoservice.deleteOneMovie(id);
+		//http://localhost:8082/movie_info/deletemovie/write_ID_Here
 		
 	}
 	

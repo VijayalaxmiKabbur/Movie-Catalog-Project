@@ -20,7 +20,7 @@ public class Movie_Rating_Service_Imple implements Movie_Rating_Service {
 
 	@Override
 	public Movie_Rating addRatingToSpecifiedMovie(int movieId, int userId,int ratingNo) {
-		Movie_Catalog catalog = restTemplate.getForObject("http://movie_catalog_service1/movie_catalog/oneHistroy/"+movieId+"/"+userId,Movie_Catalog.class );
+		Movie_Catalog catalog = restTemplate.getForObject("http://localhost:8081/movie_catalog/oneHistroy/"+movieId+"/"+userId,Movie_Catalog.class );
 		Movie_Rating movierating = new Movie_Rating(movieId,userId,catalog.getMovieName(),ratingNo);
 		movieratingrepo.save(movierating);
 		return movierating;

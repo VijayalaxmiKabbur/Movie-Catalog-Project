@@ -17,8 +17,7 @@ public class Movie_Info_Service_Imple implements Movie_Info_Service{
 	movie_Info_Repository movierepo;
 	@Override
 	public List<Movie_Info> getAllMovieInfo() {
-		return movierepo.findAll();
-		
+		return movierepo.findAll();	
 	}
 
 	@Override

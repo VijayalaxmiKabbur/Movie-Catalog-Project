@@ -38,7 +38,7 @@ public class Movie_Catalog_Service_Imple implements Movie_Catalog_Service {
 
 	@Override
 	public List<Movie_Catalog> viewWatchHistroyOfOneUser(int id) {
-		return catalogrepo.findByuserId(id);
+		return catalogrepo.findByuserId(id);	
 		
 	}
 

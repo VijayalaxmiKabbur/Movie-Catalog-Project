@@ -17,7 +17,7 @@ public class Movie_Catalog {
 	private int userId;
 	
 	private String movieName;
-	String opinion;
+	private String opinion;
 	
 	public Movie_Catalog() {
 		super();
